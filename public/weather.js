@@ -4,7 +4,7 @@
     const city = inputCity.value.trim();
     if (!city) return alert('Please enter a city');
   
-    fetch(`http://localhost:3000/weather?city=${city}`)
+    fetch(`/weather?city=${city}`)
     .then((res => res.json()))
     .then(weatherInfo => {
       if(weatherInfo.error) {

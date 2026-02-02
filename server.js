@@ -1,16 +1,16 @@
+
 require('dotenv').config();
 
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
+const PORT = 3000;
 
 app.use(cors()); // allow all origins
-
-
-
-const PORT = 3000;
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/weather', async (req, res) => {
   // 1. Get city from user
