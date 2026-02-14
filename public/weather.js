@@ -12,7 +12,7 @@
         return;
       }
     
-       // Extract data from backend
+       // Extracts data from backend
       const {
         city: cityName,
         temperature,
@@ -31,7 +31,6 @@
       const sunsetTime = new Date(sunset * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
       const updatedTime = new Date(lastUpdate * 1000).toLocaleString('en-US', { weekday: 'short', hour: '2-digit', minute: '2-digit' });
 
-      // Build icon URL if provided
       const iconUrl = iconCode ? `https://openweathermap.org/img/wn/${iconCode}@2x.png` : '';
 
       document.querySelector('.city-name').textContent = cityName;
