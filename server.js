@@ -1,4 +1,3 @@
-
 require('dotenv').config();
 
 const express = require('express');
@@ -9,11 +8,11 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-app.use(cors()); // allow all origins
+app.use(cors()); 
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/weather', async (req, res) => {
-  // 1. Get city from user
+  // Gets city from user
   const city = req.query.city;
 
   if (!city) {
@@ -21,7 +20,7 @@ app.get('/weather', async (req, res) => {
   }
 
   try {
-    // 2. Backend talks to weather API
+    //This allows backend talk to weather API
     const weatherResponse = await axios.get(
       'https://api.openweathermap.org/data/2.5/weather',
       {
@@ -35,11 +34,9 @@ app.get('/weather', async (req, res) => {
 
     
 
-
-    // 3. Extract only what you need
   const data = weatherResponse.data;
 
-    // 4. Send clean response to frontend
+    //  Sends response to frontend
     res.json({
       city: data.name,
       temperature: data.main.temp,
