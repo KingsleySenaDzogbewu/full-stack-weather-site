@@ -20,7 +20,7 @@ app.get('/weather', async (req, res) => {
   }
 
   try {
-    //This allows backend talk to weather API
+    //This allows the backend talk to weather API
     const weatherResponse = await axios.get(
       'https://api.openweathermap.org/data/2.5/weather',
       {
@@ -31,8 +31,6 @@ app.get('/weather', async (req, res) => {
         }
       }
     );
-
-    
 
   const data = weatherResponse.data;
 
@@ -58,6 +56,3 @@ app.get('/weather', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
-
-
