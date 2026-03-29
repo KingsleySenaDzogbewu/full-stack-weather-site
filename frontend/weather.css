@@ -4,7 +4,6 @@ html, body {
   padding: 0;
 }
 
-
 body {
   background: linear-gradient(to bottom right, #a1c4fd, #c2e9fb); /* soft blue gradient */
 }
@@ -20,7 +19,6 @@ body {
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   color: white;
-
 }
 
 .hidden {
