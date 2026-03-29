@@ -26,7 +26,7 @@
         lastUpdate
       } = weatherInfo;
 
-      // Convert timestamps to human-readable
+      // Converts timestamps to human-readable
       const sunriseTime = new Date(sunrise * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
       const sunsetTime = new Date(sunset * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
       const updatedTime = new Date(lastUpdate * 1000).toLocaleString('en-US', { weekday: 'short', hour: '2-digit', minute: '2-digit' });
@@ -46,7 +46,6 @@
 
       document.querySelector('.input-header').classList.add('hidden');
       document.querySelector('.background').classList.remove('hidden');
-
     })
   };
 
@@ -54,11 +53,8 @@ document.querySelector('.search-icon-button').addEventListener('click', () => {
   fetchWeatherInfo()
 });
 
-
 inputCity.addEventListener('keydown', (event) => {
   if(event.key === 'Enter') {
     fetchWeatherInfo();
   }
 });
-
-
