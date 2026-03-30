@@ -1,5 +1,6 @@
   const inputCity = document.querySelector('.input-city');
 
+//Function to fetch weather infor for a given city
   function fetchWeatherInfo() {
     const city = inputCity.value.trim();
     if (!city) return alert('Please enter a city');
