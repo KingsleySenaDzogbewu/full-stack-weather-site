@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+//Import required node.js modules and libraries
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
@@ -15,6 +16,7 @@ app.get('/weather', async (req, res) => {
   // Gets city from user
   const city = req.query.city;
 
+  //Validate request to ensure that a city name is provided
   if (!city) {
     return res.status(400).json({ error: 'City is required' });
   }
@@ -47,12 +49,13 @@ app.get('/weather', async (req, res) => {
       iconCode: data.weather[0].icon,
       lastUpdate: Math.floor(Date.now() / 1000)
     });
-
+// Handle errors like invalid city name
   } catch (error) {
     res.status(500).json({ error: 'Could not fetch weather data' });
   }
 });
 
+//start the server and listen for incoming requests
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
